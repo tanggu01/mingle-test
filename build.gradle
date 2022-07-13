@@ -29,6 +29,11 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+
+	//Error
+	// https://mavenlibs.com/maven/dependency/org.javassist/javassist
+	implementation 'org.javassist:javassist:3.29.0-GA'
+
 	//JUnit4 추가
 	testImplementation("org.junit.vintage:junit-vintage-engine") {
 		exclude group: "org.hamcrest", module: "hamcrest-core"

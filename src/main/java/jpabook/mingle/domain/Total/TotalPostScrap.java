@@ -11,7 +11,6 @@ import java.time.LocalDateTime;
 
 @Entity
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 
 public class TotalPostScrap {
 
@@ -21,7 +20,7 @@ public class TotalPostScrap {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "totalpost_id")
-    private UnivPost univPost;
+    private TotalPost totalPost;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
