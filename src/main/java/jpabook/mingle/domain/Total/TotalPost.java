@@ -2,6 +2,7 @@ package jpabook.mingle.domain.Total;
 
 import jpabook.mingle.domain.PostCategory;
 import jpabook.mingle.domain.PostCommentStatus;
+import jpabook.mingle.domain.Univ.UnivPost;
 import jpabook.mingle.domain.User;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -9,6 +10,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -23,6 +26,8 @@ public class TotalPost {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @OneToMany(mappedBy = "totalPost")
+    private List<TotalComment> postTotalcomments = new ArrayList<>();
 
     @Enumerated(EnumType.STRING)
     private PostCategory postCategory; //enum

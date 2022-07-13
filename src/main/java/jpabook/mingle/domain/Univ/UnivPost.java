@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -23,6 +25,8 @@ public class UnivPost {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @OneToMany(mappedBy = "univPost")
+    private List<UnivComment> postUnivcomments = new ArrayList<>();
 
     @Enumerated(EnumType.STRING)
     private PostCategory postCategory; //enum

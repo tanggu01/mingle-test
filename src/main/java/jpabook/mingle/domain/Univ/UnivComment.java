@@ -28,7 +28,8 @@ public class UnivComment {
 
     private String content;
 
-    private Long parent_comment_id;
+    @Column(name="parent_comment_id")
+    private Long parentCommentId;
 
     /** 익명방법? */
     private boolean isAnonymous;
